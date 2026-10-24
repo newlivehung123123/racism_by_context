@@ -1,0 +1,119 @@
+05_checks, run on 24 October 2026 at 08.22 with R version 4.6.1 (2026-06-24)
+
+Cores 4, imputed data sets 20, imputed samples 22
+Jobs by check: R1 8, R2 8, R3 5, R5 14, R6 15, R7 1, R8 2, R9 1, R10 2, R11 7, R12 8, R13 2, R14 6, R15 6 
+
+85 jobs on 4 cores, started at 08.22. The log lists the jobs when all have finished.
+R1, no weights, D-A10, step 2, edu5, 80 seconds
+R10, partial proportional odds, A-2010, M4, edu5, 507 seconds
+   warning: fitted values close to 0 or 1
+   warning: It seems that the nonparallelism assumption has resulted in intersecting linear/additive predictors. Try propodds() or fitting a partial nonproportional odds model or choosing some other link function
+   warning: some probabilities are very close to 0
+   warning: some quantities such as z, residuals, SEs may be inaccurate due to convergence at a half-step
+   warning: convergence not obtained in 100 IRLS iterations
+R10, partial proportional odds, A-2018, M4, edu5, 195 seconds
+   warning: fitted values close to 0 or 1
+   warning: It seems that the nonparallelism assumption has resulted in intersecting linear/additive predictors. Try propodds() or fitting a partial nonproportional odds model or choosing some other link function
+   warning: iterations terminated because half-step sizes are very small
+   warning: some quantities such as z, residuals, SEs may be inaccurate due to convergence at a half-step
+   warning: some probabilities are very close to 0
+R1, no weights, C-lang-2010, M4, lang, 284 seconds
+R11, national resample, C-lang-2010, M4, lang, 189 seconds
+R2, complete cases, D-A10, step 2, edu5, 4 seconds
+R2, complete cases, C-lang-2010, M4, lang, 14 seconds
+R1, no weights, A-2010, M4, edu5, 86 seconds
+R1, no weights, A-2018, M4, edu5, 82 seconds
+R1, no weights, B-cohort, base, y_sh, 1 seconds
+R1, no weights, B-cohort, base, y_ter, 1 seconds
+R1, no weights, C-rating-2010, M4, rating, 133 seconds
+R1, no weights, C-wordtest-2010, M4, wordtest, 25 seconds
+R3, proxy interviews excluded, A-2014, M4, edu5, 78 seconds
+R3, proxy interviews excluded, A-2016, M4, edu5, 78 seconds
+R3, proxy interviews excluded, A-2018, M4, edu5, 78 seconds
+R3, proxy interviews excluded, B-cohort, base, y_sh, 1 seconds
+R3, proxy interviews excluded, B-cohort, base, y_ter, 1 seconds
+R5, Hui, A-2010, M4, edu5, 77 seconds
+R5, Tibetan, A-2010, M4, edu5, 27 seconds
+R5, Miao, A-2010, M4, edu5, 77 seconds
+R5, Yi, A-2010, M4, edu5, 71 seconds
+R5, Zhuang, A-2010, M4, edu5, 78 seconds
+R5, Bouyei, A-2010, M4, edu5, 79 seconds
+R5, Manchu, A-2010, M4, edu5, 86 seconds
+R5, Hui, A-2018, M4, edu5, 74 seconds
+R5, Tibetan, A-2018, M4, edu5, 70 seconds
+R5, Miao, A-2018, M4, edu5, 75 seconds
+R5, Yi, A-2018, M4, edu5, 83 seconds
+R5, Zhuang, A-2018, M4, edu5, 75 seconds
+R5, Bouyei, A-2018, M4, edu5, 69 seconds
+R5, Manchu, A-2018, M4, edu5, 80 seconds
+R6, born before 1940, A-2010, M4, edu5, 2 seconds
+R6, born 1940 to 1949, A-2010, M4, edu5, 7 seconds
+R6, born 1950 to 1959, A-2010, M4, edu5, 13 seconds
+R6, born 1960 to 1969, A-2010, M4, edu5, 15 seconds
+R6, born 1970 to 1979, A-2010, M4, edu5, 14 seconds
+R6, born 1980 to 1989, A-2010, M4, edu5, 6 seconds
+R6, born before 1940, A-2018, M4, edu5, 1 seconds
+R6, born 1940 to 1949, A-2018, M4, edu5, 5 seconds
+R6, born 1950 to 1959, A-2018, M4, edu5, 11 seconds
+R6, born 1960 to 1969, A-2018, M4, edu5, 13 seconds
+R6, born 1970 to 1979, A-2018, M4, edu5, 11 seconds
+R6, born 1980 to 1989, A-2018, M4, edu5, 10 seconds
+R6, born 1990 or later, A-2018, M4, edu5, 3 seconds
+R6, born 1980 or earlier, A-2018, M4, t4, 3 seconds
+R6, born 1981 or later, A-2018, M4, t4, 2 seconds
+R7, hukou at age 3 only, A-2018, M4, edu5, 86 seconds
+R8, A-2010, Oaxaca, eduy, 7 seconds
+R8, A-2018, Oaxaca, eduy, 7 seconds
+R9, province of 2010, A-2018, M4, edu5, 70 seconds
+R11, national resample, A-2010, M4, edu5, 57 seconds
+R11, national resample, A-2012, M4, edu5, 55 seconds
+R11, national resample, A-2014, M4, edu5, 54 seconds
+R11, national resample, A-2016, M4, edu5, 55 seconds
+R11, national resample, C-rating-2010, M4, rating, 91 seconds
+R11, national resample, C-wordtest-2010, M4, wordtest, 14 seconds
+R12, highest stage attended, A-2010, M4, s1, 27 seconds
+R12, highest stage attended, A-2010, M4, s2, 19 seconds
+R12, highest stage attended, A-2010, M4, s3, 13 seconds
+R12, highest stage attended, A-2010, M4, s4, 5 seconds
+R12, highest stage attended, A-2018, M4, s1, 27 seconds
+R12, highest stage attended, A-2018, M4, s2, 21 seconds
+R12, highest stage attended, A-2018, M4, s3, 14 seconds
+R12, highest stage attended, A-2018, M4, s4, 6 seconds
+R13, six education levels, A-2010, M4, edu6, 99 seconds
+R13, six education levels, A-2018, M4, edu6, 93 seconds
+R14, aged 10 to 15 in 2010, B-cohort-10to15, base, y_sh, 2 seconds
+R14, aged 10 to 15 in 2010, B-cohort-lang-10to15, base, language sample, y_sh, 2 seconds
+R14, aged 10 to 15 in 2010, B-cohort-lang-10to15, base + language, y_sh, 2 seconds
+R14, aged 10 to 15 in 2010, B-cohort-10to15, base, y_ter, 2 seconds
+R14, aged 10 to 15 in 2010, B-cohort-lang-10to15, base, language sample, y_ter, 1 seconds
+R14, aged 10 to 15 in 2010, B-cohort-lang-10to15, base + language, y_ter, 2 seconds
+R15, code 79 as the lowest category, R15-rating-2012, M4, rating0, 135 seconds
+R15, code 79 as the lowest category, R15-rating-2012, M4 + education, rating0, 151 seconds
+R15, code 79 as the lowest category, R15-rating-2014, M4, rating0, 129 seconds
+R15, code 79 as the lowest category, R15-rating-2014, M4 + education, rating0, 145 seconds
+R15, code 79 as the lowest category, R15-rating-2016, M4, rating0, 125 seconds
+R15, code 79 as the lowest category, R15-rating-2016, M4 + education, rating0, 129 seconds
+R2, complete cases, A-2010, M4, edu5, 5 seconds
+R2, complete cases, A-2018, M4, edu5, 5 seconds
+R2, complete cases, B-cohort, base, y_sh, 0 seconds
+R2, complete cases, B-cohort, base, y_ter, 0 seconds
+R2, complete cases, C-rating-2010, M4, rating, 7 seconds
+R2, complete cases, C-wordtest-2010, M4, wordtest, 1 seconds
+
+Wrote S7_robust.csv, 1,222 rows
+Wrote S7_oaxaca.csv, 16 rows
+Wrote S7_r10_selection.csv, 21 rows
+
+KHB check, R1, no weights, D-A10, step 2, edu5: standard errors from the influence functions against those of the model fit, largest relative difference 0.00%
+KHB check, R2, complete cases, D-A10, step 2, edu5: standard errors from the influence functions against those of the model fit, largest relative difference 0.00%
+S7_robust, 6 models fitted without the non-Han respondents of one hukou group
+   R1, no weights, B-cohort, base, y_sh: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; provinces pooled into the small-province group: 31
+   R2, complete cases, B-cohort, base, y_sh: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; provinces pooled into the small-province group: 31
+   R3, proxy interviews excluded, B-cohort, base, y_sh: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; provinces pooled into the small-province group: 31
+   R5, Tibetan, A-2010, M4, edu5: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; 2+3+4+5; two categories, logit
+   R5, Yi, A-2010, M4, edu5: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; 3+4+5
+   R5, Tibetan, A-2018, M4, edu5: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; 3+4+5; birth cohorts merged: 1990+1995+2000
+
+Time 20 minutes
+
+05_checks.R finished.

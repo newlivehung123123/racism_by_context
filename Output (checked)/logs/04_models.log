@@ -1,0 +1,147 @@
+04_models, run on 24 October 2026 at 08.09 with R version 4.6.1 (2026-06-24)
+
+Cores 4, imputed data sets 20
+
+Imputation
+Imputation, A-2010, 11 seconds
+Imputation, A-2012, 11 seconds
+   warning: Number of logged events: 100
+Imputation, A-2014, 11 seconds
+   warning: Number of logged events: 100
+Imputation, A-2016, 12 seconds
+   warning: Number of logged events: 100
+Imputation, A-2018, 12 seconds
+Imputation, C-lang-2010, 25 seconds
+Imputation, C-lang-2012, 25 seconds
+   warning: Number of logged events: 200
+Imputation, C-rating-2010, 24 seconds
+Imputation, C-rating-2012, 19 seconds
+   warning: Number of logged events: 200
+Imputation, C-rating-2014, 20 seconds
+   warning: Number of logged events: 200
+Imputation, C-rating-2016, 22 seconds
+Imputation, C-wordtest-2010, 13 seconds
+Imputation, C-wordtest-2014, 22 seconds
+   warning: Number of logged events: 200
+Imputation, C-wordtest-2018, 8 seconds
+   warning: Number of logged events: 100
+Imputation, D-A10, 12 seconds
+Imputation, B-cohort, 2 seconds
+Imputation, B-cohort-lang, 2 seconds
+Imputation, B-cohort-10to15, 2 seconds
+Imputation, B-enrol-16-22, 15 seconds
+Imputation, R15-rating-2012, 24 seconds
+   warning: Number of logged events: 200
+Imputation, R15-rating-2014, 21 seconds
+   warning: Number of logged events: 200
+Imputation, R15-rating-2016, 27 seconds
+Imputation runs finished 22 of 22
+A-2012, events logged by mice: prov63, prov64 removed from the model of paredu (pmm)
+A-2014, events logged by mice: prov46 removed from the model of paredu (pmm)
+A-2016, events logged by mice: prov54, prov64 removed from the model of paredu (pmm)
+C-lang-2012, events logged by mice: prov64, prov65 removed from the model of paredu (pmm); prov64, prov65 removed from the model of edu5 (pmm)
+C-rating-2012, events logged by mice: prov64, prov65 removed from the model of paredu (pmm); prov64, prov65 removed from the model of edu5 (pmm)
+C-rating-2014, events logged by mice: prov46, prov64 removed from the model of paredu (pmm); prov46, prov64 removed from the model of edu5 (pmm)
+C-wordtest-2014, events logged by mice: prov46, prov64 removed from the model of paredu (pmm); prov46, prov64 removed from the model of edu5 (pmm)
+C-wordtest-2018, events logged by mice: prov15, prov64, prov65 removed from the model of paredu (pmm)
+R15-rating-2012, events logged by mice: prov64, prov65 removed from the model of paredu (pmm); prov64, prov65 removed from the model of edu5 (pmm)
+R15-rating-2014, events logged by mice: prov46, prov64 removed from the model of paredu (pmm); prov46, prov64 removed from the model of edu5 (pmm)
+Wrote S8_imputation.csv, 114 rows
+
+Models
+69 jobs on 4 cores, started at 08.11. The log lists the jobs when all have finished.
+D-A10, step 1, edu5, 65 seconds
+D-A10, step 2, edu5, 74 seconds
+C-lang-2010, M4, lang, 280 seconds
+C-lang-2010, M4 + education, lang, 327 seconds
+C-lang-2012, M4, lang, 3 seconds
+C-lang-2012, M4 + education, lang, 3 seconds
+A-2010, M3, edu5, 32 seconds
+A-2010, M4, edu5, 79 seconds
+A-2010, M4, t1, 25 seconds
+A-2010, M4, t2, 15 seconds
+A-2010, M4, t3, 10 seconds
+A-2010, M4, t4, 4 seconds
+A-2012, M3, edu5, 32 seconds
+A-2012, M4, edu5, 79 seconds
+A-2012, M4, t1, 24 seconds
+A-2012, M4, t2, 15 seconds
+A-2012, M4, t3, 10 seconds
+A-2012, M4, t4, 4 seconds
+A-2014, M3, edu5, 30 seconds
+A-2014, M4, edu5, 77 seconds
+A-2014, M4, t1, 24 seconds
+A-2014, M4, t2, 16 seconds
+A-2014, M4, t3, 11 seconds
+A-2014, M4, t4, 5 seconds
+A-2016, M3, edu5, 32 seconds
+A-2016, M4, edu5, 78 seconds
+A-2016, M4, t1, 25 seconds
+A-2016, M4, t2, 15 seconds
+A-2016, M4, t3, 10 seconds
+A-2016, M4, t4, 5 seconds
+A-2018, M3, edu5, 31 seconds
+A-2018, M4, edu5, 80 seconds
+A-2018, M4, t1, 26 seconds
+A-2018, M4, t2, 16 seconds
+A-2018, M4, t3, 11 seconds
+A-2018, M4, t4, 5 seconds
+C-rating-2010, M4, rating, 132 seconds
+C-rating-2010, M4 + education, rating, 151 seconds
+C-rating-2012, M4, rating, 85 seconds
+C-rating-2012, M4 + education, rating, 95 seconds
+C-rating-2014, M4, rating, 104 seconds
+C-rating-2014, M4 + education, rating, 117 seconds
+C-rating-2016, M4, rating, 99 seconds
+C-rating-2016, M4 + education, rating, 111 seconds
+C-wordtest-2010, M4, wordtest, 24 seconds
+C-wordtest-2010, M4 + education, wordtest, 29 seconds
+C-wordtest-2014, M4, wordtest, 23 seconds
+C-wordtest-2014, M4 + education, wordtest, 26 seconds
+C-wordtest-2018, M4, wordtest, 16 seconds
+C-wordtest-2018, M4 + education, wordtest, 20 seconds
+B-cohort, base, y_sh, 1 seconds
+B-cohort-lang, base, language sample, y_sh, 1 seconds
+B-cohort-lang, base + language, y_sh, 1 seconds
+B-cohort, base, y_ter, 1 seconds
+B-cohort-lang, base, language sample, y_ter, 1 seconds
+B-cohort-lang, base + language, y_ter, 1 seconds
+B-enrol-16-22, base, enrol, 14 seconds
+B-enrol-16-18, base, enrol, 6 seconds
+B-enrol-19-22, base, enrol, 7 seconds
+A-2010, M1, edu5, 2 seconds
+A-2010, M2, edu5, 2 seconds
+A-2012, M1, edu5, 2 seconds
+A-2012, M2, edu5, 2 seconds
+A-2014, M1, edu5, 2 seconds
+A-2014, M2, edu5, 2 seconds
+A-2016, M1, edu5, 2 seconds
+A-2016, M2, edu5, 2 seconds
+A-2018, M1, edu5, 2 seconds
+A-2018, M2, edu5, 2 seconds
+
+Wrote T2_ame_main.csv, 160 rows
+Wrote S4_transitions.csv, 32 rows
+Wrote S5_ame_other.csv, 288 rows
+Wrote T3_ame_language.csv, 274 rows
+Wrote T4_khb.csv, 48 rows
+Wrote T4_bcohort.csv, 24 rows
+Wrote S6_ame_enrol.csv, 12 rows
+Wrote S3_coef_A.csv, 564 rows
+Wrote S3_coef_Aother.csv, 842 rows
+Wrote S3_coef_C.csv, 890 rows
+Wrote S3_coef_B.csv, 297 rows
+
+KHB check, D-A10, step 1, edu5: standard errors from the influence functions against those of the model fit, largest relative difference 0.00%
+KHB check, D-A10, step 2, edu5: standard errors from the influence functions against those of the model fit, largest relative difference 0.00%
+T3_ame_language, 2 models not estimable
+   C-lang-2012, M4, lang: the category minority language has fewer than 20 Han respondents
+   C-lang-2012, M4 + education, lang: the category minority language has fewer than 20 Han respondents
+T4_bcohort, 3 models fitted without the non-Han respondents of one hukou group
+   B-cohort, base, y_sh: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; provinces pooled into the small-province group: 31
+   B-cohort-lang, base, language sample, y_sh: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; provinces pooled into the small-province group: 31
+   B-cohort-lang, base + language, y_sh: the outcome does not vary among the non-Han respondents with non-agricultural hukou at age 3; the model was fitted without them and without the interaction, and only the effect for the agricultural hukou group is shown; provinces pooled into the small-province group: 31
+
+Time 13 minutes
+
+04_models.R finished.

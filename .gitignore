@@ -1,0 +1,18 @@
+# CFPS data and anything built from person records never enter the repository
+*.dta
+*.zip
+*.rar
+*.7z
+*.sparsebundle
+*.dmg
+*.rds
+Newly downloaded Data/
+Output/
+Work/
+
+# System and Python files
+.DS_Store
+__pycache__/
+*.pyc
+.Rhistory
+.RData

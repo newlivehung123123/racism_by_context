@@ -1,0 +1,41 @@
+01_checks, run on 21 October 2026 at 15.07 with R version 4.6.1 (2026-06-24)
+
+XY, 2 files match, choose one in the manual section of 00_setup.R
+No cross-year file is in use, so the table C3 is not made, and the weight check C4 counts every person as not in the cross-year file. Unpack the 2020 and 2022 data, or name the cross-year file in the manual section of 00_setup.R, to include it.
+A10, checking CFPS2010/[CFPS Public Data] CFPS2010 in STATA (English)/ecfps2010adult_202008.dta
+C10, checking CFPS2010/[CFPS Public Data] CFPS2010 in STATA (English)/ecfps2010child_201906.dta
+R10, checking CFPS2010/[CFPS Public Data] CFPS2010 in STATA (English)/ecfps2010famconf_202008.dta
+E10, checking CFPS2010/[CFPS Public Data] CFPS2010 in STATA (English)/ecfps2010famecon_202008.dta
+A12, checking CFPS2012/ecfps2012adult_202505.dta
+C12, checking CFPS2012/ecfps2012child_201906.dta
+R12, checking CFPS2012/ecfps2012famconf_092015.dta
+E12, checking CFPS2012/ecfps2012famecon_201906.dta
+A14, checking CFPS2014/ecfps2014adult_201906.dta
+C14, checking CFPS2014/ecfps2014child_201906.dta
+R14, checking CFPS2014/ecfps2014famconf_170630.dta
+E14, checking CFPS2014/ecfps2014famecon_201906.dta
+A16, checking CFPS2016/ecfps2016adult_201906.dta
+C16, checking CFPS2016/ecfps2016child_201906.dta
+R16, checking CFPS2016/ecfps2016famconf_201804.dta
+E16, checking CFPS2016/ecfps2016famecon_201807.dta
+A18, checking CFPS2018/ecfps2018person_202012.dta
+C18, checking CFPS2018/ecfps2018childproxy_202012.dta
+R18, checking CFPS2018/ecfps2018famconf_202008.dta
+E18, checking CFPS2018/ecfps2018famecon_202101.dta
+A20, not found
+C20, not found
+R20, not found
+E20, not found
+A22, not found
+C22, not found
+R22, not found
+E22, not found
+
+Tables written to the folder Output on the disk
+    C0_weight_names.csv
+    C1_files.csv
+    C2_missing.csv
+    C3_first_wave was not made, because no cross-year file is in use.
+    C4_weights.csv
+
+01_checks.R finished. Run checks and copy.command now screens every table and log and copies them into the folder Output (checked).

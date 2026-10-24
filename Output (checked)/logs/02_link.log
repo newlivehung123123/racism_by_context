@@ -1,0 +1,111 @@
+02_link, run on 24 October 2026 at 08.09 with R version 4.6.1 (2026-06-24)
+
+Files
+A10  records 33,598, variables read 25, not in the file: cfps2010edu, cfps2010sch, cfps2010eduy, edu2010_t1_best, edu2010, sch2010, eduy2010, edu2010_*, sch2010_*, eduy2010_*
+A10  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+C10  records 8,990, variables read 18, not in the file: cfps2010edu, edu2010, edu2010_*
+C10  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+R10  records 57,152, variables read 4, not in the file: none
+R10  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+E10  records 14,797, variables read 3, not in the file: familysize10, familysize12, familysize14, familysize16, familysize18, fml_count
+E10  fid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+A12  records 35,719, variables read 25, not in the file: cfps2012edu
+A12  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+C12  records 9,918, variables read 4, not in the file: none
+C12  pid: records with a missing or invalid ID dropped 1,298, duplicate records dropped 0
+R12  records 55,012, variables read 5, not in the file: none
+R12  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 1,253
+E12  records 14,615, variables read 3, not in the file: familysize10, familysize12, familysize14, familysize16, familysize18, fml_count
+E12  fid12: records with a missing or invalid ID dropped 1,300, duplicate records dropped 0
+A14  records 37,147, variables read 23, not in the file: none
+A14  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+C14  records 8,616, variables read 3, not in the file: none
+C14  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+R14  records 57,734, variables read 4, not in the file: none
+R14  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 2,139
+E14  records 13,946, variables read 3, not in the file: familysize10, familysize12, familysize14, familysize16, familysize18, fml_count
+E14  fid14: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+A16  records 36,892, variables read 22, not in the file: none
+A16  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+C16  records 8,427, variables read 4, not in the file: none
+C16  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+R16  records 58,179, variables read 4, not in the file: none
+R16  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+E16  records 14,019, variables read 3, not in the file: familysize, familysize10, familysize12, familysize14, familysize18, fml_count
+E16  fid16: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+A18  records 37,354, variables read 25, not in the file: none
+A18  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+C18  records 8,735, variables read 8, not in the file: none
+C18  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+R18  records 58,504, variables read 4, not in the file: none
+R18  pid: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+E18  records 14,218, variables read 4, not in the file: familysize, familysize10, familysize12, familysize14, familysize16
+E18  fid18: records with a missing or invalid ID dropped 0, duplicate records dropped 0
+Names of ethnic groups found 56, names of provinces found 31
+
+Persons
+Persons in the adult and child files 65,502
+  first interviewed in 2010 42,588
+  first interviewed in 2012 10,384
+  first interviewed in 2014 5,439
+  first interviewed in 2016 4,017
+  first interviewed in 2018 3,074
+Ethnicity known 64,927, non-Han 6,255; only codes outside 1 to 60 12
+Hukou at age 3 known 52,531, from the 2018 item on hukou at age 12 240; only codes 5, 7 or 79 697
+Birth year known 57,221, gender known 58,860, parents' education known 57,568, 2010 province known 42,588
+
+PSUs
+2012: countyid equal to the 2010 county for 98.2% of the 27,249 respondents with both, labels c_
+2014: countyid14 equal to the 2010 county for 92.3% of the 26,842 respondents with both, labels c14_
+2016: countyid16 equal to the 2010 county for 91.1% of the 26,495 respondents with both, labels c16_
+2018: psu equal to the 2010 county for 51.5% of the 27,359 respondents with both, labels p18_
+Pooled PSU from the 2010 county 42,588, from the 2018 PSU 15,195, from a county of 2012 to 2016 6,186, own PSU 1,533
+
+Family income
+2010: income faminc_net, family size familysize, size from the roster for 0 families, no size for 0, income missing for 947 of 14,797 families
+2012: income fincome1, family size familysize, size from the roster for 0 families, no size for 0, income missing for 1,473 of 13,315 families
+2014: income fincome1, family size familysize, size from the roster for 0 families, no size for 0, income missing for 1,245 of 13,946 families
+2016: income fincome1, family size familysize16, size from the roster for 0 families, no size for 0, income missing for 37 of 14,019 families
+2018: income fincome1, family size familysize18, size from the roster for 0 families, no size for 0, income missing for 0 of 14,218 families
+
+Frames
+W10  adult respondents 33,598; education cfps2010edu_best, school level cfps2010sch_best, years of schooling cfps2010eduy_best; age from the birth year 0; PSU from the person 0; family income per person known 31,609
+     qc1 gives the same level as cfps2010edu_best for 92.1% of the 33,573 respondents with both
+W12  adult respondents 35,719; education edu2012, school level sch2012, years of schooling eduy2012; age from the birth year <10; PSU from the person 164; family income per person known 32,295
+W14  adult respondents 37,147; education cfps2014edu, school level cfps2014sch, years of schooling cfps2014eduy_im; age from the birth year 17; PSU from the person 1,155; family income per person known 34,236
+W16  adult respondents 36,892; education cfps2016edu, school level cfps2016sch, years of schooling cfps2016eduy_im; age from the birth year <10; PSU from the person 42; family income per person known 36,146
+W18  adult respondents 37,354; education cfps2018edu, school level cfps2018sch, years of schooling cfps2018eduy_im; age from the birth year 0; PSU from the person 0; family income per person known 36,735
+C10  child respondents 8,990; education cfps2010edu_best; PSU from the person 0; family income per person known 8,473
+F18  respondents with a positive panel weight 28,420, from the adult file 27,358, child respondents in 2010 6,237
+BE   adult respondents aged 16 to 22, all waves 17,425
+
+Samples
+A-2010                 frame W10  respondents 28,796, non-Han 2,281
+A-2012                 frame W12  respondents 27,385, non-Han 2,101
+A-2014                 frame W14  respondents 26,148, non-Han 1,864
+A-2016                 frame W16  respondents 26,145, non-Han 2,076
+A-2018                 frame W18  respondents 25,350, non-Han 2,123
+C-lang-2010            frame W10  respondents 32,189, non-Han 2,640
+C-lang-2012            frame W12  respondents 30,309, non-Han 2,352
+C-rating-2010          frame W10  respondents 33,011, non-Han 2,648
+C-rating-2012          frame W12  respondents 23,444, non-Han 1,663
+C-rating-2014          frame W14  respondents 24,199, non-Han 1,788
+C-rating-2016          frame W16  respondents 23,923, non-Han 1,943
+C-wordtest-2010        frame W10  respondents 33,013, non-Han 2,649
+C-wordtest-2014        frame W14  respondents 28,428, non-Han 2,205
+C-wordtest-2018        frame W18  respondents 20,815, non-Han 1,821
+D-A10                  frame W10  respondents 28,009, non-Han 2,271
+B-cohort               frame F18  respondents 1,409, non-Han 161
+B-cohort-lang          frame F18  respondents 1,325, non-Han 144
+B-cohort-10to15        frame F18  respondents 2,108, non-Han 245
+B-cohort-lang-10to15   frame F18  respondents 2,004, non-Han 226
+B-enrol-16-22          frame BE   respondents 14,863, non-Han 1,514
+B-enrol-16-18          frame BE   respondents 6,303, non-Han 669
+B-enrol-19-22          frame BE   respondents 8,560, non-Han 845
+R15-rating-2012        frame W12  respondents 30,319, non-Han 2,355
+R15-rating-2014        frame W14  respondents 28,402, non-Han 2,204
+R15-rating-2016        frame W16  respondents 28,776, non-Han 2,423
+
+Time 12 seconds
+
+02_link.R finished. The frames and samples are in the file link.rds in the folder Work on the disk.
