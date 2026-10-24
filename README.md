@@ -2,6 +2,8 @@
 
 This repository holds the code, the aggregate results and the tables of a study of how non-Han Chinese are disadvantaged in education and in language. The study uses the China Family Panel Studies (CFPS), waves 2010, 2012, 2014, 2016 and 2018.
 
+To see the results in the browser, open [Exhibits](Exhibits/README.md) for Tables I to IV and Figure 1, and [Exhibits/Supplementary tables](Exhibits/Supplementary%20tables/README.md) for Tables S1 to S11. The same tables are in the two Word files in `Exhibits`.
+
 The repository holds no CFPS data. The CFPS user agreement does not allow the data to be passed on, so the steps below start with an application for the data. Everything in `Output (checked)` and `Exhibits` is aggregate (counts, shares and model estimates by group), and no published file shows a count of respondents from 1 to 9.
 
 With the data in place, the checks and the analysis take about 40 minutes on a recent Mac.
@@ -41,13 +43,16 @@ R scripts/
   05_checks.R                   robustness checks R1 to R15 (Table S7)
   analysis_tools.R              functions of 02 to 05 (recodes, survey models,
                                 marginal effects, KHB, hiding of small counts)
-  06_exhibits.py                builds the Word tables and Figure 1
+  06_exhibits.py                builds the Word tables, Figure 1 and the pages
+                                that show the tables on GitHub
   Run checks and copy.command   macOS runner of 01_checks.R
   Run analysis.command          macOS runner of 02_link.R to 05_checks.R
   Last run.txt                  report of the run that gave the published results
 Output (checked)/               the published results, 27 CSV tables
   logs/                         the logs of 00_setup.R to 05_checks.R
 Exhibits/
+  README.md                     Tables I to IV and Figure 1, shown on GitHub
+  Supplementary tables/         Tables S1 to S11, one page per table, shown on GitHub
   Main tables and figure.docx   Tables I to IV and Figure 1
   Supplementary tables.docx     Tables S1 to S11
   Figure 1.png, Figure 1.pdf    Figure 1 in black and white
@@ -234,7 +239,7 @@ From the repository folder, run 06_exhibits.py.
 "$HOME/venv-cfps/bin/python" "R scripts/06_exhibits.py"
 ```
 
-06_exhibits.py reads only `Output (checked)` and writes the two Word files and Figure 1 into `Exhibits`. It needs neither the data nor the disk, so it also rebuilds the published exhibits straight after cloning. Table numbers are Roman numerals, tables have three horizontal lines only, and Figure 1 is in black and white.
+06_exhibits.py reads only `Output (checked)` and writes the two Word files, Figure 1 and the pages that show the tables on GitHub (`Exhibits/README.md` and the folder `Exhibits/Supplementary tables`) into `Exhibits`. It needs neither the data nor the disk, so it also rebuilds the published exhibits straight after cloning. Table numbers are Roman numerals, tables have three horizontal lines only, and Figure 1 is in black and white.
 
 ## Step 8. Compare your results with the published ones
 

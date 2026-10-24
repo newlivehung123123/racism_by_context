@@ -6,6 +6,10 @@
 # Exhibits/Main tables and figure.docx   Tables I to IV and Figure 1
 # Exhibits/Figure 1.png, Figure 1.pdf    Figure 1 in black and white
 # Exhibits/Supplementary tables.docx     Tables S1 to S11
+# Exhibits/README.md                     Tables I to IV and Figure 1, as a page
+#                                        that GitHub shows in the browser
+# Exhibits/Supplementary tables/         Tables S1 to S11 the same way, one
+#                                        page per table and a README.md list
 #
 # The script reads only the folder Output (checked), which holds aggregate
 # tables, so it needs neither the CFPS data nor the encrypted disk. Tables
@@ -379,7 +383,90 @@ def add_table(doc, widths, head, body, size=22):
     assert abs(sum(widths) - TEXT_WIDTH) <= 5, sum(widths)
     body_el = doc.element.body
     body_el.insert(len(body_el) - 1, parse_xml(table_xml(widths, head, body, size)))
+    MD.append(md_table(widths, head, body))
     return len(head) + len(body)
+
+
+#------------------------------------------------------------------------------
+# Markdown copies of the exhibits. GitHub does not show Word files in the
+# browser, so every caption, table, note and the figure also goes into MD,
+# which main() writes to a .md file next to each Word file.
+#------------------------------------------------------------------------------
+MD = []
+
+
+def md_text(s):
+    return (s.replace("|", "\\|").replace("*", "\\*").replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def md_cell(c, head=False):
+    t = "<br>".join(md_text(x) for x in c["lines"] if x)
+    if t and c["italic"]:
+        t = f"*{t}*"
+    if t and c["bold"] and not head:
+        t = f"**{t}**"
+    return "&emsp;" * (c["indent"] // INDENT) + t
+
+
+def md_table(widths, head, body):
+    """Markdown has one heading row and no merged cells. The heading rows are
+    joined column by column, a heading cell over several columns is repeated
+    in each, and the text of any other merged cell goes in its first column."""
+    hs = []
+    for row in head:
+        cells = []
+        for c in row:
+            cells += [md_cell(c, head=True)] * c["span"]
+        hs.append(cells)
+    top = ["<br>".join(dict.fromkeys(x for x in col if x)) for col in zip(*hs)]
+    lines = ["| " + " | ".join(top) + " |", "|" + "---|" * len(widths)]
+    for row in body:
+        cells = []
+        for c in row:
+            cells += [md_cell(c)] + [""] * (c["span"] - 1)
+        lines.append("| " + " | ".join(cells) + " |")
+    return "\n".join(lines)
+
+
+def md_italics(text):
+    """A word set between asterisks is printed in italics, as in notes()"""
+    return "".join(f"*{md_text(b.strip('*'))}*" if b.startswith("*") else md_text(b)
+                   for b in re.split(r"(\*[^*]+\*)", text) if b)
+
+
+def write_md(name, title, intro):
+    """The page starts with a title, the intro and a list of the exhibits"""
+    toc = []
+    for x in MD:
+        if x.startswith("### ") and "(continued)" not in x:
+            label, t = x[4:].split("\n\n", 1)
+            toc.append(f"- [{label}](#{label.lower().replace(' ', '-')}), {t.strip('*')}")
+    with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
+        f.write("\n\n".join([f"# {title}"] + intro + ["\n".join(toc)] + MD) + "\n")
+    MD.clear()
+
+
+def write_md_pages(folder, title, intro):
+    """One page per table, because GitHub stops showing a page of about
+    half a megabyte, and a README.md in the folder that lists the pages"""
+    path = os.path.join(OUT, folder)
+    os.makedirs(path, exist_ok=True)
+    pages = []
+    for x in MD:
+        if x.startswith("### ") and "(continued)" not in x:
+            label, t = x[4:].split("\n\n", 1)
+            pages.append((label, t, []))
+        else:
+            pages[-1][2].append(x)
+    toc = []
+    for label, t, rest in pages:
+        toc.append(f"- [{label}]({label.replace(' ', '%20')}.md), {t.strip('*')}")
+        back = f"Back to the [list of the {title.lower()}](README.md)."
+        with open(os.path.join(path, f"{label}.md"), "w", encoding="utf-8") as f:
+            f.write("\n\n".join([f"# {label}", t] + rest + [back]) + "\n")
+    with open(os.path.join(path, "README.md"), "w", encoding="utf-8") as f:
+        f.write("\n\n".join([f"# {title}"] + intro + ["\n".join(toc)]) + "\n")
+    MD.clear()
 
 
 #------------------------------------------------------------------------------
@@ -417,6 +504,7 @@ def para(doc, parts, size=11, after=0, before=0, keep=False, page_break=False):
 def caption(doc, label, title, page_break=True):
     para(doc, [(label, True, False)], keep=True, page_break=page_break)
     para(doc, [(title, False, True)], keep=True, after=6)
+    MD.append(f"### {label}\n\n*{md_text(title)}*")
 
 
 def notes(doc, items, size=11):
@@ -428,6 +516,7 @@ def notes(doc, items, size=11):
             if bit:
                 parts.append((bit.strip("*"), False, bit.startswith("*")))
         para(doc, parts, size=size, before=6 if k == 0 else 3)
+        MD.append("**Note:** " + md_italics(text))
 
 
 P_NOTE = "The ( ) includes the *p*-value and the [ ] the 95% confidence interval."
@@ -766,6 +855,7 @@ def figure_page(doc):
     caption(doc, "Figure 1", "Share Completing Each School Transition by Birth Cohort, Ethnicity and Hukou "
                              "at Age 3")
     doc.add_picture(os.path.join(OUT, "Figure 1.png"), width=Inches(6.5))
+    MD.append("![Figure 1](Figure%201.png)")
     notes(doc, [
         "Using CFPS 2010 and 2018 data. Percentages are weighted with the CFPS national cross-sectional "
         "weights of each wave. Cohorts born up to 1985 come from CFPS 2010 and cohorts born from 1986 to "
@@ -926,9 +1016,11 @@ def coef_rows(d, ame_tables):
     return body
 
 
-def continued(doc, label, title):
-    para(doc, [(f"{label} (continued)", True, False)], keep=True, page_break=True)
+def continued(doc, label, title, page_break=True):
+    para(doc, [(f"{label} (continued)", True, False)], keep=True, page_break=page_break,
+         before=0 if page_break else 12)
     para(doc, [(title, False, True)], keep=True, after=6)
+    MD.append(f"### {label} (continued)\n\n*{md_text(title)}*")
 
 
 def supp_flow(doc):
@@ -1113,9 +1205,8 @@ def supp_checks(doc):
     body = [[C(x["sample"]), C(x["step"]), C(R10_TERMS.get(x["term"], cap(x["term"]))),
              C(fmt(x["wald"], 2)), C(x["df"] or DASH), C(fmt_p(x["p"])), C(cap(x["decision"]))]
             for _, x in sel.iterrows()]
-    para(doc, [("Table S7 (continued)", True, False)], keep=True, before=12)
-    para(doc, [("Check R10, Selection of the Terms Free across the Levels of Education", False, True)],
-         keep=True, after=6)
+    continued(doc, "Table S7", "Check R10, Selection of the Terms Free across the Levels of Education",
+              page_break=False)
     n += add_table(doc, widths, head, body, size=16)
     notes(doc, [
         "A term made equal across levels has one coefficient for all levels of education. The terms of step "
@@ -1255,6 +1346,12 @@ def main():
     counts["Figure 1, points shown"] = figure_1()
     figure_page(doc)
     doc.save(os.path.join(OUT, "Main tables and figure.docx"))
+    write_md("README.md", "Tables and figure of the paper", [
+        "Tables I to IV and Figure 1 of the paper, the same as in `Main tables and figure.docx`, written "
+        "so that GitHub shows them in the browser. The supplementary tables are in the folder "
+        "[Supplementary tables](Supplementary%20tables/README.md), one page per table. "
+        "`R scripts/06_exhibits.py` writes these pages and the Word files from the CSV tables in "
+        "`Output (checked)`."])
 
     doc = new_doc()
     a = rd("S3_coef_A")
@@ -1286,6 +1383,10 @@ def main():
     counts["Table S10"] = supp_classmates(doc)
     counts["Table S11"] = supp_cohorts(doc)
     doc.save(os.path.join(OUT, "Supplementary tables.docx"))
+    write_md_pages("Supplementary tables", "Supplementary tables", [
+        "Tables S1 to S11 of the paper, the same as in `Supplementary tables.docx`, one page per table, "
+        "written so that GitHub shows them in the browser. Tables I to IV and Figure 1 are in "
+        "[Exhibits](../README.md)."])
 
     for k, v in counts.items():
         print(f"{k}: {v} rows")
